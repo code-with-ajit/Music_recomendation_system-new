@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Search } from 'lucide-react';
 import { motion } from 'framer-motion';
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 const Hero = ({ onSearch }) => {
     const [song, setSong] = useState("");
@@ -12,7 +13,7 @@ const Hero = ({ onSearch }) => {
             return;
         }
 
-        const response = await fetch("http://127.0.0.1:5000/search", {
+        const response = await fetch(backendUrl + "/search", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

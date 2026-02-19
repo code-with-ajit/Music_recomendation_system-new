@@ -19,7 +19,8 @@ const Navbar = () => {
     // Update links to use real routes
     const navLinks = [
         { name: 'Home', href: '/' },
-        { name: 'Recommendations', href: '/#recommendations' },
+        { name: 'Features', href: '/features' },
+        { name: 'Contact', href: '/contact' },
         { name: 'About', href: '/about' },
     ];
 
@@ -29,10 +30,10 @@ const Navbar = () => {
         return location.pathname === path;
     }
 
+
     return (
         <nav
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'bg-black/80 backdrop-blur-xl border-b border-white/5' : 'bg-transparent'
-                }`}
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'bg-black/80 backdrop-blur-xl border-b border-white/5' : 'bg-transparent'}`}
         >
             <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
                 {/* Logo */}

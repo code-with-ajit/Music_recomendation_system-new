@@ -4,6 +4,8 @@ import RecommendationSection from './RecommendationSection';
 import MusicPlayer from './MusicPlayer';
 import { motion } from 'framer-motion';
 
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
+
 const Home = () => {
     const [matchedSong, setMatchedSong] = useState(null);
     const [recommendations, setRecommendations] = useState([]);
@@ -14,7 +16,7 @@ const Home = () => {
         try {
             setLoading(true);
 
-            const response = await fetch("http://127.0.0.1:5000/recommend", {
+            const response = await fetch(backendUrl + "/recommend", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
